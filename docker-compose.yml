@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  httpsdocker:
+    image: ${DOCKER_REGISTRY}httpsdocker
+    build:
+      context: .
+      dockerfile: httpsdocker/Dockerfile

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  httpsdocker:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5000:80"
+      - "5001:443"
+    volumes:
+    # For Linux change APPDATA for HOME
+      - ${APPDATA}/Microsoft/UserSecrets/:/root/.microsoft/usersecrets/
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+
